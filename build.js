@@ -6,7 +6,7 @@ var proxyquire = require('proxyquireify');
 browserify()
   .transform('babelify') // Try commenting out this line
   .plugin(proxyquire.plugin)
-  .require(require.resolve('./test.js'), { entry: true })
+  .require(require.resolve('./src/test.js'), { entry: true })
   .bundle()
   .pipe(fs.createWriteStream(path.join(__dirname, 'test.bundle.js')));
 
